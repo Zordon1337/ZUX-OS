@@ -94,7 +94,7 @@ def run():
 
 # main menu
 def menu():
-    choice = input(Colorate.Horizontal(Colors.green, "root@" + socket.gethostname() + ":~$ ", Colors.white , 1))
+    choice = input(Colorate.Horizontal(Colors.green, "root@" + socket.gethostname() + ":~$ ", Colors.white ,1))
 
     if choice == "Neofetch" or choice =="neofetch":
         neofetch()
