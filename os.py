@@ -4,11 +4,8 @@ import time
 import psutil
 import platform
 import socket
-import re
-import uuid
-import json
 import logging
-import requests
+import pystyle
 import subprocess
 from subprocess import Popen
 from pathlib import Path
@@ -37,9 +34,7 @@ def neofetch():
     print(Colorate.Horizontal(Colors.purple_to_red, "OS VERSION: 1.1", 1))
     print(Colorate.Horizontal(Colors.purple_to_red, "Kernel: Xkernel", 1))
     print(Colorate.Horizontal(Colors.purple_to_red, "hostname: " + socket.gethostname(), 1))
-    print(Colorate.Horizontal(Colors.purple_to_red, "Processor Architecture:", platform.machine(), 1)) 
-    print(Colorate.Horizontal(Colors.purple_to_red, "Cores: ", psutil.cpu_count(), 1))
-    print(Colorate.Horizontal(Colors.purple_to_red, 'RAM used in %:', psutil.virtual_memory()[2], 1))
+    print(Colorate.Horizontal(Colors.purple_to_red, "Processor Architecture: " + platform.machine(), 1)) 
     print(Colorate.Horizontal(Colors.purple_to_red, "", 1))
     menu()
 
@@ -94,7 +89,7 @@ def run():
 
 # main menu
 def menu():
-    choice = input(Colorate.Horizontal(Colors.green, "root@" + socket.gethostname() + ":~$ ", Colors.white ,1))
+    choice = input(Colorate.Horizontal(Colors.purple_to_blue, "root@" + socket.gethostname() + ":~$ ",  1))
 
     if choice == "Neofetch" or choice =="neofetch":
         neofetch()
